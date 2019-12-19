@@ -11,7 +11,7 @@ from .base import (MultiSequencePreprocessingMixin,
                    MultiSequenceOnlinePreprocessingMixin)
 from .timeseries import Butterworth, EWMA, DoubleEWMA
 
-__all__ = ['Binarizer', 'Butterworth', 'DoubleEWMA', 'EWMA', 'Imputer',
+__all__ = ['Binarizer', 'Butterworth', 'DoubleEWMA', 'EWMA',
            'KernelCenterer', 'LabelBinarizer', 'MultiLabelBinarizer',
            'Normalizer', 'PolynomialFeatures']
 
@@ -26,10 +26,6 @@ if hasattr(preprocessing, 'FunctionTransformer'):
     class FunctionTransformer(MultiSequencePreprocessingMixin,
                               preprocessing.FunctionTransformer):
         __doc__ = preprocessing.FunctionTransformer.__doc__
-
-
-class Imputer(MultiSequencePreprocessingMixin, preprocessing.Imputer):
-    __doc__ = preprocessing.Imputer.__doc__
 
 
 class KernelCenterer(MultiSequencePreprocessingMixin,
@@ -61,7 +57,6 @@ if hasattr(preprocessing, 'MaxAbsScaler'):
     class MaxAbsScaler(MultiSequenceOnlinePreprocessingMixin,
                        preprocessing.MaxAbsScaler):
         __doc__ = preprocessing.MaxAbsScaler.__doc__
-
 
 class Normalizer(MultiSequencePreprocessingMixin, preprocessing.Normalizer):
     __doc__ = preprocessing.Normalizer.__doc__
